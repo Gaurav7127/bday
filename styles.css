@@ -1,0 +1,600 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffecf3, #f0e6ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+    color: #e83e8c;
+    margin-bottom: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.module-container {
+    margin: 0 auto;
+    max-width: 500px;
+    transition: all 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    background: linear-gradient(to right, #e83e8c, #7b68ee);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.status-text {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.instruction-text {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Cake styles */
+.cake {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+
+.cake-base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #e83e8c;
+    border-radius: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cake-middle {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    height: 25%;
+    background-color: #f06ba1;
+    border-radius: 10px;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 75%;
+    width: 100%;
+    height: 25%;
+    background-color: #f591b7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.candle {
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    border-radius: 4px;
+    bottom: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.candle-left {
+    left: 25%;
+    height: 50px;
+    background-color: #5bc0de;
+}
+
+.candle-center {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    background-color: #5cb85c;
+}
+
+.candle-right {
+    right: 25%;
+    height: 50px;
+    background-color: #9b59b6;
+}
+
+.flame {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 24px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: flame 1s infinite alternate;
+    transition: all 0.3s ease;
+}
+
+.decoration {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.d1 { bottom: 10%; left: 10%; }
+.d2 { bottom: 30%; left: 20%; }
+.d3 { bottom: 20%; left: 40%; }
+.d4 { bottom: 10%; right: 30%; }
+.d5 { bottom: 25%; right: 15%; }
+
+/* Card styles */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Change from fixed 50vh to auto */
+    min-height: 50vh; /* Maintain a minimum height */
+    width: 90%; /* Make it responsive */
+    max-width: 600px; /* Prevent it from becoming too wide */
+    margin: 0 auto;
+    perspective: 1500px;
+    cursor: pointer;
+}
+
+/* Common card styles */
+.card-front, .card-inside {
+    position: absolute;
+    width: 100%;
+    min-height: 100%; /* Ensure the inside card adapts */
+    backface-visibility: hidden;
+    transition: transform 1s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Front Card */
+.card-front {
+    background: linear-gradient(135deg, #e83e8c, #7b68ee);
+    color: white;
+    transform: rotateY(0deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Inside Card */
+.card-inside {
+    background-color: pink;
+    color: #333;
+    transform: rotateY(180deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Flip Animation */
+.card.open .card-front {
+    transform: rotateY(180deg);
+}
+
+.card.open .card-inside {
+    transform: rotateY(0deg);
+}
+
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.special-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7b68ee;
+}
+
+.emoji-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+/* Gift box styles */
+.gift-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+.gift-base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #e83e8c;
+    border-radius: 10px;
+    transition: all 0.7s ease;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background-color: #f06ba1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.7s ease;
+}
+
+.gift-ribbon-vertical {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 100%;
+    background-color: #7b68ee;
+    z-index: 1;
+}
+
+.gift-ribbon-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 30px;
+    background-color: #7b68ee;
+    z-index: 1;
+}
+
+.gift-bow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    transition: all 0.7s ease;
+}
+
+.bow-left, .bow-right {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 20px;
+    background-color: #6a5acd;
+    border-radius: 50%;
+}
+
+.bow-left {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.bow-right {
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.bow-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #5d4db8;
+    border-radius: 50%;
+}
+
+.gift-instruction {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    color: #555;
+    animation: bounce 2s infinite;
+}
+
+/* Photos styles */
+.photos-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.photos-container h3 {
+    font-size: 1.8rem;
+    color: #e83e8c;
+    margin-bottom: 20px;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* New hover effect */
+.photo-item img:hover {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 15px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+}
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes flame {
+    0% {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1) rotate(2deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        opacity: 0.9;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .cake {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .card {
+        width: 180px;
+        height: 130px;
+    }
+    
+    .gift-box {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .photos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Opening animations */
+.gift-box.opening .gift-base {
+    transform: translateY(100%);
+    opacity: 0.5;
+}
+
+.gift-box.opening .gift-lid {
+    transform: translateY(-100%);
+    opacity: 0.5;
+}
+
+.gift-box.opening .gift-bow {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 500px; /* Prevent excessive width */
+    height: auto; /* Allow it to grow dynamically */
+    min-height: 50vh; /* Maintain minimum height */
+    margin: 0 auto;
+    perspective: 1500px;
+    cursor: pointer;
+}
+
+.card-front, .card-inside {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    backface-visibility: hidden;
+    transition: transform 1s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    box-sizing: border-box; /* Prevents content overflow */
+}
+
+.card-inside {
+    background-color: pink;
+    color: #333;
+    transform: rotateY(180deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents extra content from overflowing */
+    padding: 15px; /* Reduces padding for smaller screens */
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 95%; /* Adjust width for small screens */
+    }
+    
+    .card-inside {
+        font-size: 14px; /* Reduce font size for better readability */
+        padding: 10px; /* Reduce padding */
+    }
+}

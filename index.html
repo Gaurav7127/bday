@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">Happy Birthday!</h1>
+        
+        <!-- Step 1: Birthday Cake -->
+        <div id="cake-container" class="module-container">
+            <div class="cake">
+                <!-- Cake layers -->
+                <div class="cake-base"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-top"></div>
+                
+                <!-- Candles -->
+                <div class="candle candle-left">
+                    <div class="flame" id="flame-1"></div>
+                </div>
+                <div class="candle candle-center">
+                    <div class="flame" id="flame-2"></div>
+                </div>
+                <div class="candle candle-right">
+                    <div class="flame" id="flame-3"></div>
+                </div>
+                
+                <!-- Decorations -->
+                <div class="decoration d1"></div>
+                <div class="decoration d2"></div>
+                <div class="decoration d3"></div>
+                <div class="decoration d4"></div>
+                <div class="decoration d5"></div>
+            </div>
+            
+            <button id="mic-button" class="button">Enable Microphone</button>
+            <p id="mic-status" class="status-text"></p>
+            <p id="blow-instruction" class="instruction-text">Blow into your microphone to blow out the candles!</p>
+        </div>
+        
+        <!-- Step 2: Birthday Card -->
+        <div id="card-container" class="module-container hidden">
+            <div class="card">
+                <div class="card-front">
+                    
+                    <div class="card-icon">🎂</div>
+                    <p>Click to open</p>
+                </div>
+                <div class="card-inside">
+                    <h1>To My Dearest Friend ❤️</h1>
+            <p>
+                To My Dearest Friend
+                Today, I celebrate not just your birthday, but the incredible person you are and the wonderful friendship we share. Through all of life's ups and downs, you've been a constant source of joy, support, and inspiration in my life.
+                <p>   
+                Remember all those late-night conversations, the laughter that brought tears to our eyes, the shoulders we've cried on, and the countless memories we've created together? Each moment has been a precious gift that I treasure deeply.
+                </p>
+                Your kindness, your strength, your humor, and your beautiful heart make the world a brighter place. I'm so grateful that our paths crossed and that we've walked together through so many chapters of life.
+                <p>
+                On your special day, I wish you everything your heart desires  all the happiness, success, love, and adventure you can handle. May this year bring you countless blessings and wonderful new memories.
+                </p>
+                <p>
+                Happy Birthday, my dear friend. Here's to celebrating you today and always! 🎉💕
+                <p>
+                Happy Birthday, Bestie! 🎉
+                </p>
+                You are the best friend anyone could ask for! May this year bring you happiness and success. ❤️ Our friendship is like a shining star—always glowing and never fading. ✨ Wishing you a day as special as you are! 💖 
+            </p>
+            <p>
+            Happy Birthday Vaishu! 🎉❤️ Our friendship is like a shining star—always glowing and never fading. ✨ Wishing you a day as special as you are! 💖
+        </p>
+            <p class="bold-text">Happy Birthday, my dear friend! 🎉</p>
+            
+        </div>
+    </div>
+                    <div class="emoji-row">
+                        <span>🎉</span>
+                        <span>🎁</span>
+                        <span>🎈</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="gift-button" class="button hidden">Open Your Gift</button>
+        </div>
+        
+        <!-- Step 3: Gift Box -->
+        <div id="gift-container" class="module-container hidden">
+            <div class="gift-box" id="gift-box">
+                <div class="gift-base"></div>
+                <div class="gift-lid"></div>
+                <div class="gift-ribbon-vertical"></div>
+                <div class="gift-ribbon-horizontal"></div>
+                <div class="gift-bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+                <p class="gift-instruction">Click to open your gift</p>
+            </div>
+            
+            <div id="photos-container" class="photos-container hidden">
+                <h3>Some Special Memories</h3>
+                <div class="photos-grid">
+                    <div class="photo-item" data-src="photo1.jpeg">
+                        <img src="photo1.jpeg" alt="A Special Memory! 💖">
+                        <div class="photo-overlay">
+                            <p>A Special Memory! 💖</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-src="photo2.jpeg">
+                        <img src="photo2.jpeg" alt="A Special Memory! 💖">
+                        <div class="photo-overlay">
+                            <p>A Special Memory! 💖</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-src="photo3.jpeg">
+                        <img src="photo3.jpeg" alt="A Special Memory! 💖">
+                        <div class="photo-overlay">
+                            <p>A Special Memory! 💖</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-src="photo4.jpeg">
+                        <img src="photo4.jpeg" alt="A Special Memory! 💖">
+                        <div class="photo-overlay">
+                            <p>A Special Memory! 💖</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Photo Modal -->
+        <div id="photo-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img id="modal-image" src="/placeholder.svg" alt="Birthday memory">
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
