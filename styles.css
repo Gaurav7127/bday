@@ -590,11 +590,11 @@ body {
 
 @media screen and (max-width: 600px) {
     .card {
-        width: 95%; /* Adjust width for small screens */
+        width: 55%; /* Adjust width for small screens */
     }
     
     .card-inside {
-        font-size: 14px; /* Reduce font size for better readability */
-        padding: 10px; /* Reduce padding */
+        font-size: 9px; /* Reduce font size for better readability */
+        padding: 6px; /* Reduce padding */
     }
 }
